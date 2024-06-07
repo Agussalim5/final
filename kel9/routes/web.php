@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\genreController;
+use App\Http\Controllers\filmController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,3 +24,5 @@ Route::get('/', function () {
 route::get('/dashboard', [dashboardController::class, 'index']);
 //tabel genre
 route::resource('/genre', genreController::class);
+//tabel film
+route::resource('/film', filmController::class);

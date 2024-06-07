@@ -26,7 +26,7 @@
      </li>
 
      <li>
-       <a href="/">
+       <a href="/film">
          <i class="zmdi zmdi-card-membership"></i> <span>film</span>
        </a>
      </li>
