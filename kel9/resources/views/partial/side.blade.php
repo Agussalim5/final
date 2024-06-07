@@ -38,7 +38,7 @@
      </li>
 
      <li>
-      <a href="/">
+      <a href="/kritik">
         <i class="zmdi zmdi-brush"></i> <span>kritik</span>
       </a>
     </li>

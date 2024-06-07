@@ -1,9 +1,6 @@
 <?php
 
-use App\Http\Controllers\dashboardController;
-use App\Http\Controllers\genreController;
-use App\Http\Controllers\filmController;
-use App\Http\Controllers\castController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,14 +15,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('layout.master');
+    return view('welcome');
 });
 
-//halaman dashboard
-route::get('/dashboard', [dashboardController::class, 'index']);
-//tabel genre
-route::resource('/genre', genreController::class);
-//tabel film
-route::resource('/film', filmController::class);
-//tabel cast
-route::resource('/cast', castController::class);
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';
