@@ -32,7 +32,7 @@
      </li>
 
      <li>
-       <a href="/">
+       <a href="/cast">
          <i class="zmdi zmdi-accounts"></i> <span>cast</span>
        </a>
      </li>

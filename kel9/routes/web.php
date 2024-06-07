@@ -3,6 +3,7 @@
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\genreController;
 use App\Http\Controllers\filmController;
+use App\Http\Controllers\castController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,3 +27,5 @@ route::get('/dashboard', [dashboardController::class, 'index']);
 route::resource('/genre', genreController::class);
 //tabel film
 route::resource('/film', filmController::class);
+//tabel cast
+route::resource('/cast', castController::class);
