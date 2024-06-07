@@ -44,14 +44,22 @@
     </li>
 
     <li>
-      <a href="/">
+      <a href="/peran">
         <i class="zmdi zmdi-mood"></i> <span>peran</span>
       </a>
     </li>
 
     <li class="sidebar-header">IN/OUT</li>
     <li >
+      <form method="POST" action="{{ route('logout') }}">
+        @csrf
 
+        <x-dropdown-link :href="route('logout')"
+                onclick="event.preventDefault();
+                            this.closest('form').submit();">
+            {{ __('Log Out') }}
+        </x-dropdown-link>
+    </form>
     </li>
   </ul>
 </div>

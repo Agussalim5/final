@@ -9,7 +9,6 @@ class dashboardController extends Controller
 {
     public function index()
     {
-        $genreCount = genre::count();
-        return view('back.Bdashboard', compact('genreCount'));
+        return view('back.Bdashboard');
     }
 }
