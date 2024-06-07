@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\dashboardController;
+use App\Http\Controllers\genreController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('layout.master');
 });
+
+//halaman dashboard
+route::get('/dashboard', [dashboardController::class, 'index']);
+//tabel genre
+route::resource('/genre', genreController::class);

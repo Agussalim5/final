@@ -13,14 +13,14 @@
     </li>
     <li class="sidebar-header">HALAMAN UTAMA</li>
     <li>
-      <a href="/">
+      <a href="/dashboard">
         <i class="zmdi zmdi-view-dashboard"></i> <span>Dashboard</span>
       </a>
     </li>
      <li class="sidebar-header">CONTENT REVIEW FILM</li>
   
      <li>
-       <a href="/">
+       <a href="/genre">
          <i class="zmdi zmdi-format-list-bulleted"></i> <span>genre</span>
        </a>
      </li>
