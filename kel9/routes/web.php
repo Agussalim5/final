@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\genreController;
 use App\Http\Controllers\castController;
 use App\Http\Controllers\filmController;
+use App\Http\Controllers\halamanController;
 use App\Http\Controllers\kritikController;
 use App\Http\Controllers\peranController;
 use Illuminate\Support\Facades\Route;
@@ -22,7 +23,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-    
+
+
+Route::get('/', [halamanController::class, 'index']);
+
 
 Route::get('/dashboard', function () {
     return view('back.Bdashboard');
@@ -33,10 +37,10 @@ Route::middleware('auth')->group(function () {
     route::resource('/film', filmController::class);
     route::resource('/genre', genreController::class);
     route::resource('/kritik', kritikController::class);
-    route::resource('/peran', peranController::class);  
+    route::resource('/peran', peranController::class);
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

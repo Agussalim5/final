@@ -7,9 +7,9 @@
   </div>
   <ul class="sidebar-menu do-nicescrol">
     <li>
-      <a href="/">
-        <i class="zmdi zmdi-account-box"></i> <span>profile</span>
-      </a>
+      <x-dropdown-link :href="route('profile.edit')">
+        {{ __('Profile') }}
+      </x-dropdown-link>
     </li>
     <li class="sidebar-header">HALAMAN UTAMA</li>
     <li>
