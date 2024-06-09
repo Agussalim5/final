@@ -1,18 +1,41 @@
 @extends('layout.master')
-
+@section('judul')
+Halaman review
+@endsection
 @section('content')
 <div class="container">
-    <h1>Reviews</h1>
-    <a href="{{ route('kritik.create') }}" class="btn btn-primary">Add Review</a>
-    @foreach ($kritiks as $kritik)
-        <div class="card mt-3">
-            <div class="card-body">
-                <h5 class="card-title">{{ $kritik->film->title }}</h5>
-                <p class="card-text">{{ $kritik->content }}</p>
-                <p class="card-text">Rating: {{ $kritik->point }}</p>
-                <p class="card-text">By: {{ $kritik->user->name }}</p>
-            </div>
-        </div>
-    @endforeach
+    <a href="{{ route('kritik.create') }}" class="btn btn-primary mb-3">Tambah</a>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead class="thead">
+                <tr>
+                    <th>Nama film</th>
+                    <th>Review</th>
+                    <th>Rating</th>
+                    <th>Reviewer</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($kritiks as $kritik)
+                <tr>
+                    <td>{{ $kritik->film->judul }}</td>
+                    <td>{{ Str::limit($kritik->content, 20) }}</td>
+                    <td>{{ $kritik->point }}</td>
+                    <td>{{ $kritik->user->name }}</td>
+                    <td>
+                        <a href="{{ route('kritik.show', $kritik->id) }}" class="btn btn-primary btn-sm">Show</a>
+                        <a href="{{ route('kritik.edit', $kritik->id) }}" class="btn btn-info btn-sm">Edit</a>
+                        <form action="{{ route('kritik.destroy', $kritik->id) }}" method="POST" class="d-inline">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this review?')">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
 </div>
 @endsection

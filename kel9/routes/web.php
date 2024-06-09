@@ -20,18 +20,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-
+//halaman UTama pengguna
 Route::get('/', [halamanController::class, 'index']);
+Route::get('detail-movie/{slug}', [halamanController::class, 'detail'])->name('detail-movie');
 
 
 Route::get('/dashboard', function () {
     return view('back.Bdashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+//halaman yang ditampilkan setelah login
 Route::middleware('auth')->group(function () {
     route::resource('/cast', castController::class);
     route::resource('/film', filmController::class);

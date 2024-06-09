@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\genre;
 use Illuminate\Http\Request;
 
 class dashboardController extends Controller

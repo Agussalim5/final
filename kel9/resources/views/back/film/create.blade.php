@@ -22,6 +22,13 @@
                 <input type="file" class="form-control" id="poster" name="poster">
             </div>
             <div class="form-group">
+                <label for="status">Status</label>
+                <select name="is_active" class="form-control">
+                    <option value="1">Publish</option>
+                    <option value="0">Draft</option>
+                </select>
+            </div>
+            <div class="form-group">
                 <label for="genre_id">Genre</label>
                 <select class="form-control" id="genre_id" name="genre_id">
                     @foreach ($genre as $genre)

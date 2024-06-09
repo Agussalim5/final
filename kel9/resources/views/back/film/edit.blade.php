@@ -22,6 +22,13 @@ Edit Film
                 <input type="number" class="form-control" id="tahun" name="tahun" value="{{ $film->tahun }}" required>
             </div>
             <div class="form-group">
+                <label for="status">Status </label>
+                <select name="is_active" class="form-control">
+                    <option value="1" {{ $film->is_active ==  '1' ? 'selected' : '' }}>Publish</option>
+                    <option value="0" {{ $film->is_active ==  '0' ? 'selected' : '' }}>Draft</option>
+                </select>
+            </div>
+            <div class="form-group">
                 <label for="genre_id">Genre</label>
                 <select class="form-control" id="genre_id" name="genre_id" required>
                     @foreach($genre as $g)

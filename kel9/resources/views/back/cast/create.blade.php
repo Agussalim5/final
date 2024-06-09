@@ -3,7 +3,7 @@
 @section('content')
 <div class="card">
     <div class="card-body">
-    <div class="card-title">Genre Form</div>
+    <div class="card-title">Cast Form</div>
     <hr>
      <form action="/cast" method="POST">
      @csrf

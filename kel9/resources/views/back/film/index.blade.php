@@ -17,9 +17,11 @@ Tabel film
           <tr>
             <th scope="col">no</th>
             <th scope="col">judul</th>
+            <th scope="col">slug</th>
             <th scope="col">ringkasan</th>
             <th scope="col">tahun</th>
             <th scope="col">poster</th>
+            <th scope="col">status</th>
             <th scope="col">genre</th>
             <th scope="col">actions</th>
           </tr>
@@ -29,6 +31,7 @@ Tabel film
           <tr>
             <td>{{ $key+1}}</td>
             <td>{{ $film->judul }}</td>
+            <td>{{ $film->slug }}</td>
             <td>{{ Str::limit($film->ringkasan, 30) }}</td>
             <td>{{ $film->tahun }}</td>
             <td>
@@ -36,6 +39,13 @@ Tabel film
                     <img src="{{ asset('storage/' . $film->poster) }}" alt="{{ $film->judul }}" width="100">
                 @endif
             </td>
+            <td>
+              @if ($film->is_active == '1')
+                  Active
+              @else
+                  Draft
+              @endif
+          </td>
             <td>{{ $film->genre->nama }}</td>
             <td>
               <a href="/film/{{ $film->id }}"class="btn btn-primary btn-sm">

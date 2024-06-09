@@ -8,7 +8,7 @@ Dashboard
            <div class="col-12 col-lg-6 col-xl-3 border-light">
               <a href="/genre" class="text-decoration-none">
                   <div class="card-body">
-                      <h5 class="text-white mb-0"><span class="float-right"><i class="zmdi zmdi-format-list-bulleted"></i></span></h5>
+                      <h5 class="text-white mb-0">3<span class="float-right"><i class="zmdi zmdi-format-list-bulleted"></i></span></h5>
                       <div class="progress my-3" style="height:3px;">
                           <div class="progress-bar" style="width:55%"></div>
                       </div>
@@ -30,7 +30,7 @@ Dashboard
             <div class="col-12 col-lg-6 col-xl-3 border-light">
               <a href="/" class="text-decoration-none">
                 <div class="card-body">
-                  <h5 class="text-white mb-0">1
+                  <h5 class="text-white mb-0">2
                     <span class="float-right"><i class="zmdi zmdi-accounts"></i></span>
                   </h5>
                   <div class="progress my-3" style="height: 3px;">
@@ -46,11 +46,11 @@ Dashboard
             <div class="col-12 col-lg-6 col-xl-3 border-light">
               <a href="/" class="text-decoration-none">
                 <div class="card-body">
-                  <h5 class="text-white mb-0">Peran<span class="float-right"><i class="zmdi zmdi-mood"></i></span></h5>
+                  <h5 class="text-white mb-0">2<span class="float-right"><i class="zmdi zmdi-long-arrow-up"></i></span></h5>
                     <div class="progress my-3" style="height:3px;">
                        <div class="progress-bar" style="width:55%"></div>
                     </div>
-                  <p class="mb-0 text-white small-font">Tabel<span class="float-right"><i class="zmdi zmdi-long-arrow-up"></i></span></p>
+                  <p class="mb-0 text-white small-font">Peran<span class="float-right"><i class="zmdi zmdi-long-arrow-up"></i></span></p>
                 </div>
               </a>
             </div>

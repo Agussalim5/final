@@ -14,9 +14,11 @@ return new class extends Migration
         Schema::create('film', function (Blueprint $table) {
             $table->id();
             $table->string('judul');
+            $table->text('slug');
             $table->text('ringkasan');
             $table->integer('tahun');
             $table->string('poster');
+            $table->boolean('is_active');
             $table->unsignedBigInteger('genre_id');
             $table->foreign('genre_id')->references('id')->on('genre')->onDelete('cascade');
             $table->timestamps();

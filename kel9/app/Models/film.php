@@ -11,7 +11,7 @@ class film extends Model
 
     protected $table = 'film';
 
-    protected $fillable = ['judul', 'ringkasan', 'tahun', 'poster', 'genre_id'];
+    protected $fillable = ['judul', 'slug', 'ringkasan', 'tahun', 'poster', 'is_active', 'genre_id'];
 
     public function genre()
     {

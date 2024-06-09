@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\models\film;
 use App\models\genre;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 
 class filmController extends Controller
@@ -37,10 +38,13 @@ class filmController extends Controller
             'ringkasan' => 'nullable',
             'tahun' => 'required|integer',
             'poster' => 'nullable|image',
+            'is_active' => 'required',  
             'genre_id' => 'required|exists:genre,id',
         ]);
 
         $filmData = $request->all();
+        $filmData['slug'] = Str::slug($request->judul);
+
         if ($request->hasFile('poster')) {
             $path = $request->file('poster')->store('posters', 'public');
             $filmData['poster'] = $path;
@@ -80,14 +84,15 @@ class filmController extends Controller
             'ringkasan' => 'nullable',
             'tahun' => 'required|integer',
             'poster' => 'nullable|image',
+            'is_active' => 'required',
             'genre_id' => 'required|exists:genre,id',
         ]);
 
-        $film = film::findOrFail($id);
+        $film = Film::findOrFail($id);
         $filmData = $request->all();
+        $filmData['slug'] = Str::slug($request->judul);
 
         if ($request->hasFile('poster')) {
-
             if ($film->poster) {
                 Storage::disk('public')->delete($film->poster);
             }
@@ -95,7 +100,6 @@ class filmController extends Controller
             $path = $request->file('poster')->store('posters', 'public');
             $filmData['poster'] = $path;
         } else {
-
             $filmData['poster'] = $film->poster;
         }
 

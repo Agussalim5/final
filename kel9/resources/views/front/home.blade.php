@@ -92,23 +92,27 @@
   </section>
   <div class="container">
     <div class="row event_box">
-      @foreach($movie as $film)
-      <div class="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6 design">
-        <div class="events_item">
-          <div class="thumb">
-            <a href="#"><img src="{{ asset('storage/' . $film->poster) }}" alt="{{ $film->judul }}"></a>
-            <span class="category">{{ $film->genre->nama }}</span>
-            <span class="price"><h6>{{ $film->tahun }}</h6></span>
-          </div>
-          <div class="down-content">
-            <span class="author"><h4>{{ $film->judul }}</h4></span>
-            <p>{{ Str::limit($film->ringkasan, 20) }}</p>
-          </div>
+        @foreach($movie as $film)
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6 design">
+            <div class="events_item">
+                <div class="thumb">
+                    <a href="{{ route('detail-movie', ['slug' => $film->slug]) }}">
+                        <img src="{{ asset('storage/' . $film->poster) }}" alt="{{ $film->judul }}">
+                    </a>
+                    <span class="category">{{ $film->genre->nama }}</span>
+                    <span class="price"><h6>{{ $film->tahun }}</h6></span>
+                </div>
+                <div class="down-content">
+                    <span class="author"><h4>{{ $film->judul }}</h4></span>
+                    <p>{{ Str::limit($film->ringkasan, 20) }}</p>
+                </div>
+            </div>
         </div>
-      </div>
-      @endforeach 
+        @endforeach 
     </div>
-  </div>  
+</div>
+
+
   <div class="section testimonials" id="events">
     <div class="container">
       <div class="row">
@@ -158,8 +162,8 @@
         <div class="col-lg-3 col-md-6">
           <div class="team-member">
             <div class="main-content">
-              <img src="{{asset ('/front/assets/images/member-01.jpg') }}" alt="">
-              <span class="category">UX Teacher</span>
+              <img src="{{asset ('/front/assets/images/member-03.jpg') }}" alt="">
+              <span class="category">Sistem informasi</span>
               <h4>Agus salim</h4>
               <ul class="social-icons">
                 <li><a href="#"><i class="fab fa-facebook"></i></a></li>
@@ -172,8 +176,8 @@
         <div class="col-lg-3 col-md-6">
           <div class="team-member">
             <div class="main-content">
-              <img src="{{asset ('/front/assets/images/member-02.jpg') }}" alt="">
-              <span class="category">Graphic Teacher</span>
+              <img src="{{asset ('/front/assets/images/member-03.jpg') }}" alt="">
+              <span class="category">Sistem informasi</span>
               <h4>Ardi</h4>
               <ul class="social-icons">
                 <li><a href="#"><i class="fab fa-facebook"></i></a></li>
@@ -186,8 +190,8 @@
         <div class="col-lg-3 col-md-6">
           <div class="team-member">
             <div class="main-content">
-              <img src="{{asset ('/front/assets/images/member-03.jpg') }}" alt="">
-              <span class="category">Full Stack Master</span>
+              <img src="{{asset ('/front/assets/images/member-01.jpg') }}" alt="">
+              <span class="category">Sistem informasi</span>
               <h4>Maharami</h4>
               <ul class="social-icons">
                 <li><a href="#"><i class="fab fa-facebook"></i></a></li>
@@ -200,8 +204,8 @@
         <div class="col-lg-3 col-md-6">
           <div class="team-member">
             <div class="main-content">
-              <img src="{{asset ('/front/assets/images/member-04.jpg') }}" alt="">
-              <span class="category">Digital Animator</span>
+              <img src="{{asset ('/front/assets/images/member-03.jpg') }}" alt="">
+              <span class="category">Teknik komputer</span>
               <h4>Teguh</h4>
               <ul class="social-icons">
                 <li><a href="#"><i class="fab fa-facebook"></i></a></li>
