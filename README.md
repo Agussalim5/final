@@ -7,3 +7,6 @@ teguh darmawan 2155201038
 link erd web refilm
 https://drive.google.com/drive/folders/1aVyPeTjFdZJNyt7P6uHmi0pk_DclCxj-?usp=sharing
 
+link yt demo
+https://youtu.be/j4DaOFXs1AU?si=PwKDhld71xEINcPp
+
